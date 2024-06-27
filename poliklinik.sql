@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2024 at 07:05 PM
+-- Generation Time: Jun 24, 2024 at 02:39 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -37,7 +37,8 @@ CREATE TABLE `jenis_obat` (
 --
 
 INSERT INTO `jenis_obat` (`id_obat`, `jenis_obat`) VALUES
-(1, 'bodrex');
+(1, 'bodrex'),
+(3, 'Panadol');
 
 -- --------------------------------------------------------
 
@@ -72,12 +73,15 @@ CREATE TABLE `obat` (
   `id_obat` int(11) NOT NULL,
   `kode_obat` varchar(100) NOT NULL,
   `id_jenis` int(11) NOT NULL,
-  `nama_obat` varchar(30) NOT NULL,
-  `harga` float NOT NULL,
-  `harga_jual` float NOT NULL,
-  `stok` varchar(11) NOT NULL,
-  `type_obat` varchar(10) NOT NULL
+  `nama_obat` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `obat`
+--
+
+INSERT INTO `obat` (`id_obat`, `kode_obat`, `id_jenis`, `nama_obat`) VALUES
+(2, 'dsafdasf', 1, 'dfsad');
 
 -- --------------------------------------------------------
 
@@ -88,12 +92,17 @@ CREATE TABLE `obat` (
 CREATE TABLE `obat_keluar` (
   `id_obat_keluar` int(11) NOT NULL,
   `id_obat` int(11) NOT NULL,
-  `id_jenis_obat` int(11) NOT NULL,
   `tanggal_keluar` datetime NOT NULL,
   `jumlah` int(11) NOT NULL,
-  `total_harga` float NOT NULL,
-  `jenis_obat` varchar(11) NOT NULL
+  `total_harga` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `obat_keluar`
+--
+
+INSERT INTO `obat_keluar` (`id_obat_keluar`, `id_obat`, `tanggal_keluar`, `jumlah`, `total_harga`) VALUES
+(2, 1, '1232-03-12 00:00:00', 213, 21);
 
 -- --------------------------------------------------------
 
@@ -103,16 +112,21 @@ CREATE TABLE `obat_keluar` (
 
 CREATE TABLE `obat_masuk` (
   `id_obat_masuk` int(11) NOT NULL,
-  `id_jenis_obat` int(11) NOT NULL,
   `id_obat` int(11) NOT NULL,
-  `id_supplier` int(11) NOT NULL,
   `tanggal_masuk` datetime NOT NULL,
   `jumlah` int(11) NOT NULL,
   `status` varchar(20) NOT NULL,
-  `nomina_harga` float NOT NULL,
-  `total_harga` float NOT NULL,
+  `nomina_harga` int(11) NOT NULL,
+  `total_harga` int(11) NOT NULL,
   `klasifikasi` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `obat_masuk`
+--
+
+INSERT INTO `obat_masuk` (`id_obat_masuk`, `id_obat`, `tanggal_masuk`, `jumlah`, `status`, `nomina_harga`, `total_harga`, `klasifikasi`) VALUES
+(4, 1, '2024-02-08 00:00:00', 20, '', 1000, 10000, 'gktau');
 
 -- --------------------------------------------------------
 
@@ -146,7 +160,7 @@ CREATE TABLE `pengeluaran` (
   `id_pengeluaran` int(11) NOT NULL,
   `id_keuangan` int(11) DEFAULT NULL,
   `tgl_pengeluaran` date DEFAULT NULL,
-  `id_obat` int(11) DEFAULT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
   `jum_pengeluaran` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -154,8 +168,8 @@ CREATE TABLE `pengeluaran` (
 -- Dumping data for table `pengeluaran`
 --
 
-INSERT INTO `pengeluaran` (`id_pengeluaran`, `id_keuangan`, `tgl_pengeluaran`, `id_obat`, `jum_pengeluaran`) VALUES
-(1, 6, '1223-03-21', 1, 213);
+INSERT INTO `pengeluaran` (`id_pengeluaran`, `id_keuangan`, `tgl_pengeluaran`, `keterangan`, `jum_pengeluaran`) VALUES
+(1, 6, '1223-03-21', 'Cabut Gigi', 213);
 
 -- --------------------------------------------------------
 
@@ -231,7 +245,8 @@ ALTER TABLE `keuangan`
 -- Indexes for table `obat`
 --
 ALTER TABLE `obat`
-  ADD PRIMARY KEY (`id_obat`);
+  ADD PRIMARY KEY (`id_obat`),
+  ADD KEY `id_jenis` (`id_jenis`);
 
 --
 -- Indexes for table `obat_keluar`
@@ -243,7 +258,8 @@ ALTER TABLE `obat_keluar`
 -- Indexes for table `obat_masuk`
 --
 ALTER TABLE `obat_masuk`
-  ADD PRIMARY KEY (`id_obat_masuk`);
+  ADD PRIMARY KEY (`id_obat_masuk`),
+  ADD KEY `id_obat` (`id_obat`);
 
 --
 -- Indexes for table `pemasukan`
@@ -258,8 +274,7 @@ ALTER TABLE `pemasukan`
 --
 ALTER TABLE `pengeluaran`
   ADD PRIMARY KEY (`id_pengeluaran`),
-  ADD KEY `id_keuangan` (`id_keuangan`),
-  ADD KEY `id_obat` (`id_obat`);
+  ADD KEY `id_keuangan` (`id_keuangan`);
 
 --
 -- Indexes for table `saldo`
@@ -282,13 +297,31 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `jenis_obat`
 --
 ALTER TABLE `jenis_obat`
-  MODIFY `id_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `keuangan`
 --
 ALTER TABLE `keuangan`
   MODIFY `id_keuangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `obat`
+--
+ALTER TABLE `obat`
+  MODIFY `id_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `obat_keluar`
+--
+ALTER TABLE `obat_keluar`
+  MODIFY `id_obat_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `obat_masuk`
+--
+ALTER TABLE `obat_masuk`
+  MODIFY `id_obat_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pemasukan`
@@ -300,7 +333,7 @@ ALTER TABLE `pemasukan`
 -- AUTO_INCREMENT for table `pengeluaran`
 --
 ALTER TABLE `pengeluaran`
-  MODIFY `id_pengeluaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pengeluaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `saldo`
@@ -313,16 +346,22 @@ ALTER TABLE `saldo`
 --
 
 --
+-- Constraints for table `obat`
+--
+ALTER TABLE `obat`
+  ADD CONSTRAINT `obat_ibfk_1` FOREIGN KEY (`id_jenis`) REFERENCES `jenis_obat` (`id_obat`);
+
+--
+-- Constraints for table `obat_masuk`
+--
+ALTER TABLE `obat_masuk`
+  ADD CONSTRAINT `obat_masuk_ibfk_1` FOREIGN KEY (`id_obat`) REFERENCES `jenis_obat` (`id_obat`);
+
+--
 -- Constraints for table `pemasukan`
 --
 ALTER TABLE `pemasukan`
   ADD CONSTRAINT `pemasukan_ibfk_1` FOREIGN KEY (`id_obat`) REFERENCES `jenis_obat` (`id_obat`);
-
---
--- Constraints for table `pengeluaran`
---
-ALTER TABLE `pengeluaran`
-  ADD CONSTRAINT `pengeluaran_ibfk_1` FOREIGN KEY (`id_obat`) REFERENCES `jenis_obat` (`id_obat`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

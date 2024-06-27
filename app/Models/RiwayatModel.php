@@ -4,19 +4,20 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ModelPengeluaran extends Model
+class RiwayatModel extends Model
 {
-    protected $table            = 'pengeluaran';
-    protected $primaryKey       = 'id_pengeluaran';
+    protected $table            = 'riwayat';
+    protected $primaryKey       = 'idriwayat';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields = [
-        'id_keuangan',
-        'tgl_pengeluaran',
+        'idstok',
+        'kodeobat',
+        'tanggal',
         'keterangan',
-        'jum_pengeluaran',
+        'jumlah'
     ];
 
     // Dates

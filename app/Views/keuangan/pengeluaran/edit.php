@@ -55,12 +55,8 @@
                                         <input type="date" class="form-control" id="tgl_pengeluaran" name="tgl_pengeluaran" value="<?php echo $data['tgl_pengeluaran']; ?>" placeholder="Tanggal Pengeluaran" style="background-color: #ffffff;">
                                     </div>
                                     <div class="form-group">
-                                        <label for="id_obat">ID Obat</label>
-                                        <select class="form-control" id="id_obat" name="id_obat" style="background-color: #ffffff;">
-                                            <?php foreach ($jenisobat as $jo) : ?>
-                                                <option value="<?php echo $jo['id_obat']; ?>" <?php if ($data['id_obat'] == $jo['id_obat']) echo 'selected'; ?>><?php echo $jo['jenis_obat']; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <label for="keterangan">Keterangan</label>
+                                        <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan" value="<?php echo $data['keterangan']; ?>" style="background-color: #ffffff;">
                                     </div>
                                     <div class="form-group">
                                         <label for="jum_pengeluaran">Jumlah Pengeluaran</label>

@@ -4,19 +4,22 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ModelPengeluaran extends Model
+class StokModel extends Model
 {
-    protected $table            = 'pengeluaran';
-    protected $primaryKey       = 'id_pengeluaran';
+    protected $table            = 'stok';
+    protected $primaryKey       = 'idstok';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields = [
-        'id_keuangan',
-        'tgl_pengeluaran',
-        'keterangan',
-        'jum_pengeluaran',
+        'kode_obat',
+        'satuan',
+        'stok',
+        'klasifikasi',
+        'produsen',
+        'suplier',
+        'hargabeli',
     ];
 
     // Dates

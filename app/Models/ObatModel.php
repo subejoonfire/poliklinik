@@ -6,32 +6,39 @@ use CodeIgniter\Model;
 
 class ObatModel extends Model
 {
-    protected $table = 'obat';
-    protected $primaryKey = 'id_obat';
+    protected $table            = 'obat';
+    protected $primaryKey       = 'kode_obat';
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['id_jenis_obat', 'kode_obat', 'nama_obat', 'harga', 'harga_jual', 'stok'];
+    protected $returnType       = 'array';
+    protected $useSoftDeletes   = false;
+    protected $protectFields    = true;
+    protected $allowedFields    = [
+        'kode_obat',
+        'idkandungan',
+        'namaobat',
+    ];
 
+    // Dates
+    protected $useTimestamps = false;
+    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 
-    public function getObat()
-    {
-        return $this->db->table('obat')
-            ->join('jenis_obat', 'jenis_obat.id_jenis = obat.id_jenis_obat')
-            ->get()->getResultArray();
-    }
+    // Validation
+    protected $validationRules      = [];
+    protected $validationMessages   = [];
+    protected $skipValidation       = false;
+    protected $cleanValidationRules = true;
 
-    public function find($id = null)
-    {
-        return $this->db->table('obat')
-            ->join('jenis_obat', 'jenis_obat.id_jenis = obat.id_jenis_obat')
-            ->where(['id_obat' => $id])
-            ->get()->getRowArray();
-    }
-
-    public function getJenisObat()
-    {
-        return $this->db->table('jenis_obat')->get()->getResultArray();
-    }
-
-
-
+    // Callbacks
+    protected $allowCallbacks = true;
+    protected $beforeInsert   = [];
+    protected $afterInsert    = [];
+    protected $beforeUpdate   = [];
+    protected $afterUpdate    = [];
+    protected $beforeFind     = [];
+    protected $afterFind      = [];
+    protected $beforeDelete   = [];
+    protected $afterDelete    = [];
 }

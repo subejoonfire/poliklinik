@@ -40,28 +40,52 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <a class="btn btn-primary mb-2" href="<?= base_url('/keuangan/pengeluaran/tampilan/tambah') ?>">Tambah Data</a>
+                            <a class="btn btn-primary mb-2" href="<?= base_url('obat/obat-masuk/tampilan/tambah') ?>">Tambah Data</a>
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Tanggal Pengeluaran</th>
-                                        <th>Jumlah Pengeluaran</th>
-                                        <th>Keterangan</th>
+                                        <th>Nama Obat</th>
+                                        <th>Kandungan Obat</th>
+                                        <th>Satuan</th>
+                                        <th>Stok</th>
+                                        <th>Klasifikasi</th>
+                                        <th>Produsen</th>
+                                        <th>Supplier</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    <?php foreach ($pengeluaran as $p) : ?>
+                                    <?php foreach ($obat as $om) : ?>
                                         <tr>
-                                            <td><?= $i++; ?></td>
-                                            <td><?= $p['tgl_pengeluaran']; ?></td>
-                                            <td><?= $p['jum_pengeluaran']; ?></td>
-                                            <td><?= $p['keterangan']; ?></td>
                                             <td>
-                                                <a href="<?= base_url('keuangan/pengeluaran/tampilan/edit/' . $p['id_pengeluaran']); ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                                <a href="<?= base_url('keuangan/pengeluaran/hapus/' . $p['id_pengeluaran']); ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                                <?= $i++; ?>
+                                            </td>
+                                            <td>
+                                                <?= $om['namaobat']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $om['kandungan']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $om['satuan']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $om['stok']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $om['klasifikasi']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $om['produsen']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $om['supplier']; ?>
+                                            </td>
+                                            <td>
+                                                <a href="<?= base_url('/obat/obat-masuk/tampilan/edit/') . $om['kode_obat']; ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                                                <a href="<?= base_url('/obat/obat-masuk/hapus/') . $om['kode_obat']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

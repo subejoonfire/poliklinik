@@ -24,16 +24,16 @@ public function tambah()
 {
     $id_keuangan = $this->request->getVar('id_keuangan');
     $tgl_pengeluaran = $this->request->getVar('tgl_pengeluaran');
-    $id_obat = $this->request->getVar('id_obat');
+    $keterangan = $this->request->getVar('keterangan');
     $jum_pengeluaran = $this->request->getVar('jum_pengeluaran');
-    if (empty($id_keuangan) || empty($tgl_pengeluaran) || empty($id_obat) || empty($jum_pengeluaran)) {
+    if (empty($id_keuangan) || empty($tgl_pengeluaran) || empty($keterangan) || empty($jum_pengeluaran)) {
         return redirect()->back()->with('pesan', 'Semua field harus diisi!');
     }
 
     $data = [
         'id_keuangan' => $id_keuangan,
         'tgl_pengeluaran' => $tgl_pengeluaran,
-        'id_obat' => $id_obat,
+        'keterangan' => $keterangan,
         'jum_pengeluaran' => $jum_pengeluaran,
     ];
     $this->ModelPengeluaran->insert($data);
@@ -70,17 +70,17 @@ public function edit($id)
 
     $id_keuangan = $this->request->getVar('id_keuangan');
     $tgl_pengeluaran = $this->request->getVar('tgl_pengeluaran');
-    $id_obat = $this->request->getVar('id_obat');
+    $keterangan = $this->request->getVar('keterangan');
     $jum_pengeluaran = $this->request->getVar('jum_pengeluaran');
 
-    if (empty($id_keuangan) || empty($tgl_pengeluaran) || empty($id_obat) || empty($jum_pengeluaran)) {
+    if (empty($id_keuangan) || empty($tgl_pengeluaran) || empty($keterangan) || empty($jum_pengeluaran)) {
         return redirect()->back()->with('pesan', 'Semua field harus diisi!');
     }
 
     $data_update = [
         'id_keuangan' => $id_keuangan,
         'tgl_pengeluaran' => $tgl_pengeluaran,
-        'id_obat' => $id_obat,
+        'keterangan' => $keterangan,
         'jum_pengeluaran' => $jum_pengeluaran,
     ];
 

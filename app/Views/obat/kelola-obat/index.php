@@ -40,29 +40,33 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <form action="<?php echo base_url('keuangan/pengeluaran/tambah'); ?>" method="post">
-                                <div class="form-group">
-                                    <label for="id_keuangan">ID Keuangan</label>
-                                    <select class="form-control" id="id_keuangan" name="id_keuangan" style="background-color: #ffffff;">
-                                        <?php foreach ($keuangan as $k) : ?>
-                                            <option value="<?php echo $k['id_keuangan']; ?>"><?php echo $k['jenis_poli']; ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="tgl_pengeluaran">Tanggal Pengeluaran</label>
-                                    <input type="date" class="form-control" id="tgl_pengeluaran" name="tgl_pengeluaran" placeholder="Tanggal Pengeluaran" style="background-color: #ffffff;">
-                                </div>
-                                <div class="form-group">
-                                    <label for="keterangan">Keterangan</label>
-                                    <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan" style="background-color: #ffffff;">
-                                </div>
-                                <div class="form-group">
-                                    <label for="jum_pengeluaran">Jumlah Pengeluaran</label>
-                                    <input type="number" class="form-control" id="jum_pengeluaran" name="jum_pengeluaran" placeholder="Jumlah Pengeluaran" style="background-color: #ffffff;">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
+                            <a class="btn btn-primary mb-2" href="<?= base_url('obat/kelola-obat/tampilan/tambah') ?>">Tambah Data</a>
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Kode Obat</th>
+                                        <th>Nama Obat</th>
+                                        <th>Kandungan Obat</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($obat as $o) : ?>
+                                        <tr>
+                                            <td><?= $i++; ?></td>
+                                            <td><?= $o['kode_obat']; ?></td>
+                                            <td><?= $o['namaobat']; ?></td>
+                                            <td><?= $o['kandungan']; ?></td>
+                                            <td>
+                                                <a href="<?= base_url('obat/kelola-obat/tampilan/edit/' . $o['kode_obat']); ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                                                <a href="<?= base_url('obat/kelola-obat/hapus/' . $o['kode_obat']); ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
                         </div>
                         <!-- /.card-body -->
                     </div>

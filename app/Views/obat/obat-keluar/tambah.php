@@ -40,28 +40,25 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <form action="<?php echo base_url('keuangan/pengeluaran/tambah'); ?>" method="post">
+                            <form action="<?php echo base_url('obat/obat-keluar/tambah'); ?>" method="post">
                                 <div class="form-group">
-                                    <label for="id_keuangan">ID Keuangan</label>
-                                    <select class="form-control" id="id_keuangan" name="id_keuangan" style="background-color: #ffffff;">
-                                        <?php foreach ($keuangan as $k) : ?>
-                                            <option value="<?php echo $k['id_keuangan']; ?>"><?php echo $k['jenis_poli']; ?></option>
-                                        <?php endforeach; ?>
+                                    <label for="tanggal_keluar">Tanggal Keluar</label>
+                                    <input type="date" class="form-control" id="tanggal_keluar" name="tanggal_keluar" value="<?php echo date('Y-m-d'); ?>" placeholder="Tanggal Keluar" style="background-color: #efefef;" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="id_obat">Jenis Obat</label>
+                                    <select class="form-control" id="id_obat" name="id_obat">
+                                        <?php foreach ($jenisobat as $jo) { ?>
+                                            <option value="<?= $jo['id_obat'] ?>"><?= $jo['jenis_obat'] ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="tgl_pengeluaran">Tanggal Pengeluaran</label>
-                                    <input type="date" class="form-control" id="tgl_pengeluaran" name="tgl_pengeluaran" placeholder="Tanggal Pengeluaran" style="background-color: #ffffff;">
-                                </div>
-                                <div class="form-group">
-                                    <label for="keterangan">Keterangan</label>
-                                    <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan" style="background-color: #ffffff;">
-                                </div>
-                                <div class="form-group">
-                                    <label for="jum_pengeluaran">Jumlah Pengeluaran</label>
-                                    <input type="number" class="form-control" id="jum_pengeluaran" name="jum_pengeluaran" placeholder="Jumlah Pengeluaran" style="background-color: #ffffff;">
+                                    <label for="jumlah">Jumlah</label>
+                                    <input type="number" class="form-control" id="jumlah" name="jumlah" placeholder="Jumlah" style="background-color: #ffffff;">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="<?= base_url('obat/obat-keluar/tampilan') ?>" class="btn btn-secondary">Kembali</a>
                             </form>
                         </div>
                         <!-- /.card-body -->

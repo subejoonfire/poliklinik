@@ -6,23 +6,51 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Dashboard::index');
+$routes->group('obat', function ($routes) {
+    $routes->group('jenis-obat', function ($routes) {
+        $routes->group('tampilan', function ($routes) {
+            $routes->get('/', 'JenisObatViewController::index');
+            $routes->get('tambah', 'JenisObatViewController::tambah');
+            $routes->get('edit/(:num)', 'JenisObatViewController::edit/$1');
+        });
+        $routes->post('tambah', 'JenisObatController::tambah');
+        $routes->get('hapus/(:num)', 'JenisObatController::hapus/$1');
+        $routes->post('edit/(:num)', 'JenisObatController::edit/$1');
+    });
 
-// routes jenis obat
-$routes->get('/jenis-obat', 'JenisObat::index');
-$routes->get('/jenis-obat/tambah', 'JenisObat::tambah');
-$routes->post('/jenis-obat/simpan', 'JenisObat::simpan');
-$routes->get('/jenis-obat/edit/(:num)', 'JenisObat::edit/$1');
-$routes->post('/jenis-obat/update/(:num)', 'JenisObat::update/$1');
-$routes->get('/jenis-obat/hapus/(:num)', 'JenisObat::hapus/$1');
+    $routes->group('kelola-obat', function ($routes) {
+        $routes->group('tampilan', function ($routes) {
+            $routes->get('/', 'KelolaObatViewController::index');
+            $routes->get('tambah', 'KelolaObatViewController::tambah');
+            $routes->get('edit/(:any)', 'KelolaObatViewController::edit/$1');
+        });
+        $routes->post('tambah', 'KelolaObatController::tambah');
+        $routes->get('hapus/(:any)', 'KelolaObatController::hapus/$1');
+        $routes->post('edit/(:any)', 'KelolaObatController::edit/$1');
+    });
 
-// routes kelola obat
-$routes->get('/kelola-obat', 'KelolaObat::index');
-$routes->get('/kelola-obat/tambah', 'KelolaObat::tambah');
-$routes->post('/kelola-obat/simpan', 'KelolaObat::simpan');
-$routes->get('/kelola-obat/edit/(:num)', 'KelolaObat::edit/$1');
-$routes->post('/kelola-obat/update/(:num)', 'KelolaObat::update/$1');
-$routes->get('/kelola-obat/hapus/(:num)', 'KelolaObat::hapus/$1');
+    $routes->group('obat-keluar', function ($routes) {
+        $routes->group('tampilan', function ($routes) {
+            $routes->get('/', 'ObatKeluarViewController::index');
+            $routes->get('tambah', 'ObatKeluarViewController::tambah');
+            $routes->get('edit/(:num)', 'ObatKeluarViewController::edit/$1');
+        });
+        $routes->post('tambah', 'ObatKeluarController::tambah');
+        $routes->get('hapus/(:num)', 'ObatKeluarController::hapus/$1');
+        $routes->post('edit/(:num)', 'ObatKeluarController::edit/$1');
+    });
 
+    $routes->group('obat-masuk', function ($routes) {
+        $routes->group('tampilan', function ($routes) {
+            $routes->get('/', 'ObatMasukViewController::index');
+            $routes->get('tambah', 'ObatMasukViewController::tambah');
+            $routes->get('edit/(:num)', 'ObatMasukViewController::edit/$1');
+        });
+        $routes->post('tambah', 'ObatMasukController::tambah');
+        $routes->get('hapus/(:num)', 'ObatMasukController::hapus/$1');
+        $routes->post('edit/(:num)', 'ObatMasukController::edit/$1');
+    });
+});
 // routes kelola supplier
 $routes->get('/kelola-supplier', 'KelolaSupplier::index');
 $routes->get('/kelola-supplier/tambah', 'KelolaSupplier::tambah');
@@ -31,23 +59,6 @@ $routes->get('/kelola-supplier/edit/(:num)', 'KelolaSupplier::edit/$1');
 $routes->post('/kelola-supplier/update/(:num)', 'KelolaSupplier::update/$1');
 $routes->get('/kelola-supplier/hapus/(:num)', 'KelolaSupplier::hapus/$1');
 
-// routes obat masuk 
-$routes->get('/obat-masuk', 'KelolaObatMasuk::index');
-$routes->get('/obat-masuk/tambah', 'KelolaObatMasuk::tambah');
-$routes->post('/obat-masuk/simpan', 'KelolaObatMasuk::simpan');
-$routes->post('/obat-masuk/simpan-sementara', 'KelolaObatMasuk::simpan_sementara');
-$routes->get('/obat-masuk/diterima/(:num)', 'KelolaObatMasuk::diterima/$1');
-$routes->get('/obat-masuk/edit/(:num)', 'KelolaObatMasuk::edit/$1');
-$routes->post('/obat-masuk/update/(:num)', 'KelolaObatMasuk::update/$1');
-$routes->get('/obat-masuk/hapus/(:num)', 'KelolaObatMasuk::hapus/$1');
-
-
-// routes obat keluar
-$routes->get('/obat-keluar', 'KelolaObatKeluar::index');
-$routes->post('/obat-keluar/simpan', 'KelolaObatKeluar::simpan');
-$routes->get('/obat-keluar/edit/(:num)', 'KelolaObatKeluar::edit/$1');
-$routes->post('/obat-keluar/update/(:num)', 'KelolaObatKeluar::update/$1');
-$routes->get('/obat-keluar/hapus/(:num)', 'KelolaObatKeluar::hapus/$1');
 
 
 $routes->group('keuangan', function ($routes) {

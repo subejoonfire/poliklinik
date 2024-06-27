@@ -31,73 +31,53 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <?php if (session('pesan')): ?>
+                            <?php if (session('pesan')) : ?>
                                 <div class="alert alert-success alert-dismissible mt-3">
-                                    <button type="button" class="close" data-dismiss="alert"
-                                        aria-hidden="true">&times;</button>
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                     <?= session('pesan'); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <a class="btn btn-primary mb-2" href="/obat-masuk/tambah">Tambah Data</a>
+                            <a class="btn btn-primary mb-2" href="<?= base_url('obat/obat-keluar/tampilan/tambah') ?>">Tambah Data</a>
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Tanggal</th>
-                                        <th>Nama Obat</th>
-                                        <th>Nama prodeusen</th>
-                                        <th>klasifikasi</th>
-                                        <th>Tanggal Expired</th>
+                                        <th>Jenis Obat</th>
+                                        <th>Tanggal Keluar</th>
                                         <th>Jumlah</th>
-                                        <th>Harga Satuan</th>
                                         <th>Total Harga</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    <?php foreach ($obat_masuk as $om): ?>
+                                    <?php foreach ($obat_keluar as $ok) : ?>
                                         <tr>
                                             <td>
                                                 <?= $i++; ?>
                                             </td>
                                             <td>
-                                                <?= $om['tanggal_masuk']; ?>
+                                                <?= $ok['jenis_obat']; ?> <!-- asumsi nama_obat ada di table obat_keluar -->
                                             </td>
                                             <td>
-                                                <?= $om['nama_obat']; ?>
+                                                <?= $ok['tanggal_keluar']; ?>
                                             </td>
                                             <td>
-                                                <?= $om['nama_proudesen']; ?>
+                                                <?= $ok['jumlah']; ?>
                                             </td>
                                             <td>
-                                                <?= $om['klasifikasi']; ?>
+                                                <?= $ok['total_harga']; ?>
                                             </td>
                                             <td>
-                                                <?= $om['tanggal_expired']; ?>
-                                            </td>
-                                            <td>
-                                                <?= $om['jumlah']; ?>
-                                            </td>
-                                            <td>
-                                                <?= $om['harga_satuan']; ?>
-                                            </td>
-                                            <td>
-                                                <?= $om['total_harga']; ?>
-                                            </td>
-                                            <td>
-                                                <!-- status diterima -->
-                                                <badge class="badge badge-success">Diterima</badge>
-                                                <a href="/obat-masuk/hapus/<?= $om['id_obat_masuk']; ?>"
-                                                    class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                                <a href="<?= base_url('obat/obat-keluar/tampilan/edit/') . $ok['id_obat_keluar']; ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                                                <a href="<?= base_url('obat/obat-keluar/hapus/') . $ok['id_obat_keluar']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
-
                             </table>
                         </div>
                         <!-- /.card-body -->

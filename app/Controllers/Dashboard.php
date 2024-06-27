@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\DashboardModel;
-use App\Models\ObatMasukModel;
+use App\Models\ObatModel;
 use App\Models\SupplierModel;
 use App\Controllers\BaseController;
 
@@ -11,13 +11,13 @@ class Dashboard extends BaseController
 {
 
     protected $dashboardModel;
-    protected $obatMasukModel;
+    protected $ObatModel;
     protected $supplierModel;
 
     public function __construct()
     {
         $this->dashboardModel = new DashboardModel();
-        $this->obatMasukModel = new ObatMasukModel();
+        $this->ObatModel = new ObatModel();
         $this->supplierModel = new SupplierModel();
     }
 
@@ -27,10 +27,9 @@ class Dashboard extends BaseController
         $supplierModel = new SupplierModel();
 
         $data['title'] = 'Dashboard';
-        $data['jumlah_supplier'] = $supplierModel->jumlahSupplier();
-        $data['jumlah_obat_masuk'] = $this->obatMasukModel->jumlahObatMasuk();
+        $data['jumlah_supplier'] = 10;
+        $data['jumlah_obat_masuk'] = 10;
 
         return view('dashboard/index', $data);
-
     }
 }
