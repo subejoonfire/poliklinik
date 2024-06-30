@@ -56,18 +56,18 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php echo base_url('/obat/kelola-obat/tampilan'); ?>" class="nav-link">
+                            <a href="<?php echo base_url('/obat/jenis-obat/tampilan'); ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
-                                     Obat
+                                    Kandungan Obat
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php echo base_url('/obat/jenis-obat/tampilan'); ?>" class="nav-link">
+                            <a href="<?php echo base_url('/obat/kelola-obat/tampilan'); ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
-                                    Jenis Obat
+                                    Obat
                                 </p>
                             </a>
                         </li>

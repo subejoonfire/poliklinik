@@ -3,21 +3,21 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\ModelJenisObat;
+use App\Models\KandunganModel;
 
 class JenisObatViewController extends BaseController
 {
-    public $ModelJenisObat;
+    public $KandunganModel;
     public function __construct()
     {
-        $this->ModelJenisObat = new ModelJenisObat();
+        $this->KandunganModel = new KandunganModel();
     }
     public function index()
     {
-        $jenisobat = $this->ModelJenisObat->findAll();
+        $kandungan = $this->KandunganModel->findAll();
         $data = [
             'title' => 'Jenis Obat',
-            'jenisobat' => $jenisobat,
+            'kandungan' => $kandungan,
         ];
         return view('obat/jenis-obat/index', $data);
     }
@@ -34,7 +34,7 @@ class JenisObatViewController extends BaseController
     {
         $data = [
             'title' => 'Edit Pemasukan',
-            'data' => $this->ModelJenisObat->find($id),
+            'data' => $this->KandunganModel->find($id),
         ];
         return view('obat/jenis-obat/edit', $data);
     }

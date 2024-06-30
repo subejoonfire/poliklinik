@@ -1,0 +1,261 @@
+INFO - 2024-06-27 06:48:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 06:48:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 06:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 06:50:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 07:01:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 07:23:50 --> Class "App\Models\ModelObatMasuk" not found
+in APPPATH\Controllers\ObatMasukViewController.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\ObatMasukViewController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 07:27:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 07:28:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 07:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 07:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 07:34:18 --> Class "App\Models\ModelKelolaObat" not found
+in APPPATH\Controllers\KelolaObatViewController.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\KelolaObatViewController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 07:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 07:34:25 --> Class "App\Models\ModelKelolaObat" not found
+in APPPATH\Controllers\KelolaObatViewController.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\KelolaObatViewController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+ERROR - 2024-06-27 07:34:58 --> mysqli_sql_exception: Table 'poliklinik.jenis_obat' doesn't exist in C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `obat`.*...', 0)
+#1 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `obat`.*...')
+#2 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `obat`.*...')
+#3 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `obat`.*...', Array, false)
+#4 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\poliklinik-ci4\app\Controllers\KelolaObatViewController.php(23): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObatViewController->index()
+#8 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatViewController))
+#9 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\poliklinik-ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-06-27 07:34:58 --> Table 'poliklinik.jenis_obat' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `obat`.*, `jenis_obat`.`id_obat` as `id_jenis`, `jenis_obat`.`jenis_obat` as `nama_jenis`
+FROM `obat`
+LEFT JOIN `jenis_obat` ON `obat`.`id_jenis` = `jenis_obat`.`id_obat`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\KelolaObatViewController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatViewController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatViewController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 07:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 07:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 07:36:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 11:47:44 --> Class "App\Models\ObatMasukModel" not found
+in APPPATH\Controllers\Dashboard.php on line 20.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Dashboard->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+CRITICAL - 2024-06-27 11:49:25 --> Call to undefined method App\Models\ObatModel::jumlahObatMasuk
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\Dashboard.php(31): CodeIgniter\Model->__call('jumlahObatMasuk', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+CRITICAL - 2024-06-27 11:49:39 --> Array to string conversion
+in APPPATH\Views\dashboard\index.php on line 33.
+ 1 APPPATH\Views\dashboard\index.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\dashboard\\index.php', 33)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\dashboard\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('dashboard/index', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(33): view('dashboard/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+CRITICAL - 2024-06-27 11:50:17 --> Array to string conversion
+in APPPATH\Views\dashboard\index.php on line 49.
+ 1 APPPATH\Views\dashboard\index.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\dashboard\\index.php', 49)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\dashboard\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('dashboard/index', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(33): view('dashboard/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 11:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:51:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 11:51:34 --> Undefined array key "id_obat"
+in APPPATH\Views\obat\kelola-obat\tambah.php on line 52.
+ 1 APPPATH\Views\obat\kelola-obat\tambah.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_obat"', 'C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\obat\\kelola-obat\\tambah.php', 52)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\obat\\kelola-obat\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('obat/kelola-obat/tambah', [], true)
+ 5 APPPATH\Controllers\KelolaObatViewController.php(35): view('obat/kelola-obat/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatViewController->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 11:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:56:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-27 11:56:55 --> mysqli_sql_exception: Column 'idkandungan' cannot be null in C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ob...', 0)
+#1 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ob...')
+#2 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ob...')
+#3 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ob...', Array, false)
+#4 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\poliklinik-ci4\app\Controllers\KelolaObatController.php(27): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObatController->tambah()
+#9 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatController))
+#10 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\poliklinik-ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2024-06-27 11:56:55 --> Column 'idkandungan' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `obat` (`namaobat`, `idkandungan`) VALUES (:namaobat:, :idkandungan:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\KelolaObatController.php(27): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatController->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 11:57:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-27 11:57:27 --> mysqli_sql_exception: Column 'idkandungan' cannot be null in C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ob...', 0)
+#1 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ob...')
+#2 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ob...')
+#3 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ob...', Array, false)
+#4 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\poliklinik-ci4\app\Controllers\KelolaObatController.php(27): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObatController->tambah()
+#9 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatController))
+#10 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\poliklinik-ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2024-06-27 11:57:27 --> Column 'idkandungan' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `obat` (`kode_obat`, `namaobat`, `idkandungan`) VALUES (:kode_obat:, :namaobat:, :idkandungan:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\KelolaObatController.php(27): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatController->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 11:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:58:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:59:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:59:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:59:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:59:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:59:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 11:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 12:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 12:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 12:00:09 --> Undefined array key "id_obat"
+in APPPATH\Views\obat\kelola-obat\edit.php on line 43.
+ 1 APPPATH\Views\obat\kelola-obat\edit.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_obat"', 'C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\obat\\kelola-obat\\edit.php', 43)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\obat\\kelola-obat\\edit.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('obat/kelola-obat/edit', [], true)
+ 5 APPPATH\Controllers\KelolaObatViewController.php(45): view('obat/kelola-obat/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatViewController->edit('KJK090')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 12:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 12:01:57 --> Undefined array key "idkandugan"
+in APPPATH\Views\obat\kelola-obat\edit.php on line 56.
+ 1 APPPATH\Views\obat\kelola-obat\edit.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "idkandugan"', 'C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\obat\\kelola-obat\\edit.php', 56)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\obat\\kelola-obat\\edit.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('obat/kelola-obat/edit', [], true)
+ 5 APPPATH\Controllers\KelolaObatViewController.php(45): view('obat/kelola-obat/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatViewController->edit('KJK090')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 12:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 12:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 12:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 12:11:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 12:11:59 --> Class "App\Models\ModelJenisObat" not found
+in APPPATH\Controllers\JenisObatViewController.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\JenisObatViewController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 12:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 12:12:15 --> Invalid file: "supplier/index.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('supplier/index.php')
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('supplier/index', [], true)
+ 3 APPPATH\Controllers\KelolaSupplier.php(21): view('supplier/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaSupplier->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaSupplier))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 12:12:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 12:12:24 --> Class "App\Models\ModelJenisObat" not found
+in APPPATH\Controllers\JenisObatViewController.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\JenisObatViewController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 12:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 12:13:00 --> Undefined array key "jenis_obat"
+in APPPATH\Views\obat\jenis-obat\index.php on line 57.
+ 1 APPPATH\Views\obat\jenis-obat\index.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "jenis_obat"', 'C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\obat\\jenis-obat\\index.php', 57)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\obat\\jenis-obat\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('obat/jenis-obat/index', [], true)
+ 5 APPPATH\Controllers\JenisObatViewController.php(22): view('obat/jenis-obat/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\JenisObatViewController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JenisObatViewController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-27 12:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 12:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

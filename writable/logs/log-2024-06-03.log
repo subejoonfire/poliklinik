@@ -1,0 +1,452 @@
+INFO - 2024-06-03 02:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 02:32:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 02:33:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 02:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 02:33:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 02:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 02:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 02:34:02 --> Undefined array key "id_jenis"
+in APPPATH\Views\jenis_obat\index.php on line 67.
+ 1 APPPATH\Views\jenis_obat\index.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\jenis_obat\\index.php', 67)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\jenis_obat\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('jenis_obat/index', [], true)
+ 5 APPPATH\Controllers\JenisObat.php(24): view('jenis_obat/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\JenisObat->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JenisObat))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 02:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 02:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 02:34:22 --> Undefined array key "id_jenis"
+in APPPATH\Views\jenis_obat\index.php on line 67.
+ 1 APPPATH\Views\jenis_obat\index.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\jenis_obat\\index.php', 67)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\jenis_obat\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('jenis_obat/index', [], true)
+ 5 APPPATH\Controllers\JenisObat.php(24): view('jenis_obat/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\JenisObat->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JenisObat))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 02:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-03 02:34:29 --> mysqli_sql_exception: Unknown column 'jenis_obat.id_jenis' in 'on clause' in C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\apotekrahmah\app\Models\ObatModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\apotekrahmah\app\Controllers\KelolaObat.php(20): App\Models\ObatModel->getObat()
+#6 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObat->index()
+#7 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObat))
+#8 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotekrahmah\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-06-03 02:34:29 --> Unknown column 'jenis_obat.id_jenis' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `obat`
+JOIN `jenis_obat` ON `jenis_obat`.`id_jenis` = `obat`.`id_jenis_obat`', [], false)
+ 2 APPPATH\Models\ObatModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KelolaObat.php(20): App\Models\ObatModel->getObat()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObat->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObat))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 03:11:04 --> Undefined array key "id_jenis"
+in APPPATH\Views\jenis_obat\index.php on line 67.
+ 1 APPPATH\Views\jenis_obat\index.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\jenis_obat\\index.php', 67)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\jenis_obat\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('jenis_obat/index', [], true)
+ 5 APPPATH\Controllers\JenisObat.php(24): view('jenis_obat/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\JenisObat->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JenisObat))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-03 03:12:21 --> mysqli_sql_exception: Unknown column 'jenis_obat.id_jenis' in 'on clause' in C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\apotekrahmah\app\Models\ObatKeluarModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\apotekrahmah\app\Controllers\KelolaObatKeluar.php(22): App\Models\ObatKeluarModel->getObatKeluar()
+#6 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObatKeluar->index()
+#7 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatKeluar))
+#8 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotekrahmah\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-06-03 03:12:21 --> Unknown column 'jenis_obat.id_jenis' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `obat_keluar`
+JOIN `obat` ON `obat`.`id_obat` = `obat_keluar`.`id_obat`
+JOIN `jenis_obat` ON `jenis_obat`.`id_jenis` = `obat_keluar`.`id_jenis_obat`', [], false)
+ 2 APPPATH\Models\ObatKeluarModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KelolaObatKeluar.php(22): App\Models\ObatKeluarModel->getObatKeluar()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatKeluar->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatKeluar))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:12:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 03:12:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 03:12:28 --> Undefined array key "id_jenis"
+in APPPATH\Views\kelola_obat_masuk\tambah.php on line 316.
+ 1 APPPATH\Views\kelola_obat_masuk\tambah.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php', 316)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('kelola_obat_masuk/tambah', [], true)
+ 5 APPPATH\Controllers\KelolaObatMasuk.php(37): view('kelola_obat_masuk/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 03:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 03:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 03:14:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-03 03:14:52 --> mysqli_sql_exception: Unknown column 'jenis_obat.id_jenis' in 'on clause' in C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\apotekrahmah\app\Models\ObatKeluarModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\apotekrahmah\app\Controllers\KelolaObatKeluar.php(22): App\Models\ObatKeluarModel->getObatKeluar()
+#6 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObatKeluar->index()
+#7 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatKeluar))
+#8 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotekrahmah\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-06-03 03:14:52 --> Unknown column 'jenis_obat.id_jenis' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `obat_keluar`
+JOIN `obat` ON `obat`.`id_obat` = `obat_keluar`.`id_obat`
+JOIN `jenis_obat` ON `jenis_obat`.`id_jenis` = `obat_keluar`.`id_jenis_obat`', [], false)
+ 2 APPPATH\Models\ObatKeluarModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KelolaObatKeluar.php(22): App\Models\ObatKeluarModel->getObatKeluar()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatKeluar->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatKeluar))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:14:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 03:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 03:26:21 --> Undefined array key "id_jenis"
+in APPPATH\Views\kelola_obat_masuk\tambah.php on line 316.
+ 1 APPPATH\Views\kelola_obat_masuk\tambah.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php', 316)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('kelola_obat_masuk/tambah', [], true)
+ 5 APPPATH\Controllers\KelolaObatMasuk.php(37): view('kelola_obat_masuk/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 03:28:19 --> Undefined array key "id_jenis"
+in APPPATH\Views\kelola_obat_masuk\tambah.php on line 316.
+ 1 APPPATH\Views\kelola_obat_masuk\tambah.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php', 316)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('kelola_obat_masuk/tambah', [], true)
+ 5 APPPATH\Controllers\KelolaObatMasuk.php(37): view('kelola_obat_masuk/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:28:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 03:28:52 --> Undefined array key "id_jenis"
+in APPPATH\Views\kelola_obat_masuk\tambah.php on line 316.
+ 1 APPPATH\Views\kelola_obat_masuk\tambah.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php', 316)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('kelola_obat_masuk/tambah', [], true)
+ 5 APPPATH\Controllers\KelolaObatMasuk.php(37): view('kelola_obat_masuk/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:28:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 03:28:53 --> Undefined array key "id_jenis"
+in APPPATH\Views\kelola_obat_masuk\tambah.php on line 316.
+ 1 APPPATH\Views\kelola_obat_masuk\tambah.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php', 316)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('kelola_obat_masuk/tambah', [], true)
+ 5 APPPATH\Controllers\KelolaObatMasuk.php(37): view('kelola_obat_masuk/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 03:32:02 --> Undefined array key "id_jenis_obat"
+in APPPATH\Views\kelola_obat_masuk\tambah.php on line 316.
+ 1 APPPATH\Views\kelola_obat_masuk\tambah.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis_obat"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php', 316)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('kelola_obat_masuk/tambah', [], true)
+ 5 APPPATH\Controllers\KelolaObatMasuk.php(37): view('kelola_obat_masuk/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 03:32:02 --> Undefined array key "id_jenis_obat"
+in APPPATH\Views\kelola_obat_masuk\tambah.php on line 316.
+ 1 APPPATH\Views\kelola_obat_masuk\tambah.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis_obat"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php', 316)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\kelola_obat_masuk\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('kelola_obat_masuk/tambah', [], true)
+ 5 APPPATH\Controllers\KelolaObatMasuk.php(37): view('kelola_obat_masuk/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 03:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 03:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-03 03:33:11 --> mysqli_sql_exception: Unknown column 'jenis_obat.id_jenis' in 'on clause' in C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\apotekrahmah\app\Models\ObatKeluarModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\apotekrahmah\app\Controllers\KelolaObatKeluar.php(22): App\Models\ObatKeluarModel->getObatKeluar()
+#6 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObatKeluar->index()
+#7 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatKeluar))
+#8 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotekrahmah\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-06-03 03:33:11 --> Unknown column 'jenis_obat.id_jenis' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `obat_keluar`
+JOIN `obat` ON `obat`.`id_obat` = `obat_keluar`.`id_obat`
+JOIN `jenis_obat` ON `jenis_obat`.`id_jenis` = `obat_keluar`.`id_jenis_obat`', [], false)
+ 2 APPPATH\Models\ObatKeluarModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KelolaObatKeluar.php(22): App\Models\ObatKeluarModel->getObatKeluar()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatKeluar->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatKeluar))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+ERROR - 2024-06-03 03:36:02 --> mysqli_sql_exception: Unknown column 'jenis_obat.id_jenis' in 'on clause' in C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\apotekrahmah\app\Models\ObatKeluarModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\apotekrahmah\app\Controllers\KelolaObatKeluar.php(22): App\Models\ObatKeluarModel->getObatKeluar()
+#6 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObatKeluar->index()
+#7 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatKeluar))
+#8 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotekrahmah\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-06-03 03:36:02 --> Unknown column 'jenis_obat.id_jenis' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `obat_keluar`
+JOIN `obat` ON `obat`.`id_obat` = `obat_keluar`.`id_obat`
+JOIN `jenis_obat` ON `jenis_obat`.`id_jenis` = `obat_keluar`.`id_jenis_obat`', [], false)
+ 2 APPPATH\Models\ObatKeluarModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KelolaObatKeluar.php(22): App\Models\ObatKeluarModel->getObatKeluar()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatKeluar->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatKeluar))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 03:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 03:36:07 --> Undefined array key "id_jenis"
+in APPPATH\Views\jenis_obat\index.php on line 67.
+ 1 APPPATH\Views\jenis_obat\index.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\jenis_obat\\index.php', 67)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\jenis_obat\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('jenis_obat/index', [], true)
+ 5 APPPATH\Controllers\JenisObat.php(24): view('jenis_obat/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\JenisObat->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JenisObat))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 04:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 04:18:40 --> Undefined array key "id_jenis"
+in APPPATH\Views\jenis_obat\index.php on line 67.
+ 1 APPPATH\Views\jenis_obat\index.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\jenis_obat\\index.php', 67)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\apotekrahmah\\app\\Views\\jenis_obat\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('jenis_obat/index', [], true)
+ 5 APPPATH\Controllers\JenisObat.php(24): view('jenis_obat/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\JenisObat->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JenisObat))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+ERROR - 2024-06-03 04:18:51 --> mysqli_sql_exception: Unknown column 'jenis_obat.id_jenis' in 'on clause' in C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\apotekrahmah\app\Models\ObatKeluarModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\apotekrahmah\app\Controllers\KelolaObatKeluar.php(22): App\Models\ObatKeluarModel->getObatKeluar()
+#6 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObatKeluar->index()
+#7 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatKeluar))
+#8 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotekrahmah\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-06-03 04:18:51 --> Unknown column 'jenis_obat.id_jenis' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `obat_keluar`
+JOIN `obat` ON `obat`.`id_obat` = `obat_keluar`.`id_obat`
+JOIN `jenis_obat` ON `jenis_obat`.`id_jenis` = `obat_keluar`.`id_jenis_obat`', [], false)
+ 2 APPPATH\Models\ObatKeluarModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KelolaObatKeluar.php(22): App\Models\ObatKeluarModel->getObatKeluar()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatKeluar->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatKeluar))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+INFO - 2024-06-03 13:43:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 13:43:01 --> Undefined array key "id_jenis"
+in APPPATH\Views\jenis_obat\index.php on line 67.
+ 1 APPPATH\Views\jenis_obat\index.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\jenis_obat\\index.php', 67)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\jenis_obat\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('jenis_obat/index', [], true)
+ 5 APPPATH\Controllers\JenisObat.php(24): view('jenis_obat/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\JenisObat->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JenisObat))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-03 13:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:47:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:48:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 13:48:01 --> Undefined array key "id_jenis"
+in APPPATH\Views\kelola_obat_masuk\tambah.php on line 316.
+ 1 APPPATH\Views\kelola_obat_masuk\tambah.php(316): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jenis"', 'C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\kelola_obat_masuk\\tambah.php', 316)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\poliklinik-ci4\\app\\Views\\kelola_obat_masuk\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('kelola_obat_masuk/tambah', [], true)
+ 5 APPPATH\Controllers\KelolaObatMasuk.php(37): view('kelola_obat_masuk/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-03 13:50:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 13:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-03 14:09:18 --> mysqli_sql_exception: Table 'stok.supplier' doesn't exist in C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\poliklinik-ci4\app\Models\ObatMasukModel.php(32): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\poliklinik-ci4\app\Controllers\KelolaObatMasuk.php(20): App\Models\ObatMasukModel->ObatMasuk()
+#6 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->index()
+#7 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+#8 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\poliklinik-ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-06-03 14:09:18 --> Table 'stok.supplier' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `obat_masuk`
+JOIN `obat` ON `obat`.`id_obat` = `obat_masuk`.`id_obat`
+JOIN `supplier` ON `supplier`.`id_supplier` = `obat_masuk`.`id_supplier`
+WHERE `status` = :status:', [...], false)
+ 2 APPPATH\Models\ObatMasukModel.php(32): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KelolaObatMasuk.php(20): App\Models\ObatMasukModel->ObatMasuk()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+ERROR - 2024-06-03 14:09:36 --> mysqli_sql_exception: Table 'stok.supplier' doesn't exist in C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\poliklinik-ci4\app\Models\ObatMasukModel.php(32): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\poliklinik-ci4\app\Controllers\KelolaObatMasuk.php(20): App\Models\ObatMasukModel->ObatMasuk()
+#6 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->index()
+#7 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+#8 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\poliklinik-ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-06-03 14:09:36 --> Table 'stok.supplier' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `obat_masuk`
+JOIN `obat` ON `obat`.`id_obat` = `obat_masuk`.`id_obat`
+JOIN `supplier` ON `supplier`.`id_supplier` = `obat_masuk`.`id_supplier`
+WHERE `status` = :status:', [...], false)
+ 2 APPPATH\Models\ObatMasukModel.php(32): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KelolaObatMasuk.php(20): App\Models\ObatMasukModel->ObatMasuk()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+ERROR - 2024-06-03 14:09:58 --> mysqli_sql_exception: Table 'stok.supplier' doesn't exist in C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\poliklinik-ci4\app\Models\ObatMasukModel.php(32): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\poliklinik-ci4\app\Controllers\KelolaObatMasuk.php(20): App\Models\ObatMasukModel->ObatMasuk()
+#6 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->index()
+#7 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+#8 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\poliklinik-ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\poliklinik-ci4\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2024-06-03 14:09:58 --> Table 'stok.supplier' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `obat_masuk`
+JOIN `obat` ON `obat`.`id_obat` = `obat_masuk`.`id_obat`
+JOIN `supplier` ON `supplier`.`id_supplier` = `obat_masuk`.`id_supplier`
+WHERE `status` = :status:', [...], false)
+ 2 APPPATH\Models\ObatMasukModel.php(32): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KelolaObatMasuk.php(20): App\Models\ObatMasukModel->ObatMasuk()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\KelolaObatMasuk->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelolaObatMasuk))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\poliklinik-ci4\\public\\index.php')
+INFO - 2024-06-03 14:11:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 14:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 14:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

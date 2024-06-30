@@ -51,13 +51,13 @@
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    <?php foreach ($jenisobat as $jo) : ?>
+                                    <?php foreach ($kandungan as $jo) : ?>
                                         <tr>
                                             <td><?= $i++; ?></td>
-                                            <td><?= $jo['jenis_obat']; ?></td>
+                                            <td><?= $jo['kandungan']; ?></td>
                                             <td>
-                                                <a href="<?= base_url('obat/jenis-obat/tampilan/edit/' . $jo['id_obat']); ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                                <a href="<?= base_url('obat/jenis-obat/hapus/' . $jo['id_obat']); ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                                <a href="<?= base_url('obat/jenis-obat/tampilan/edit/' . $jo['idkandungan']); ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                                                <a href="<?= base_url('obat/jenis-obat/hapus/' . $jo['idkandungan']); ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

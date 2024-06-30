@@ -1,0 +1,82 @@
+ERROR - 2024-06-02 12:02:24 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', '', '', 'stok', 3306, '', 0)
+#1 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1699): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\apotekrahmah\app\Models\SupplierModel.php(17): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\apotekrahmah\app\Controllers\Dashboard.php(30): App\Models\SupplierModel->jumlahSupplier()
+#6 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotekrahmah\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1699): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#3 C:\xampp\htdocs\apotekrahmah\app\Models\SupplierModel.php(17): CodeIgniter\Database\BaseBuilder->countAllResults()
+#4 C:\xampp\htdocs\apotekrahmah\app\Controllers\Dashboard.php(30): App\Models\SupplierModel->jumlahSupplier()
+#5 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+#6 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\apotekrahmah\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2024-06-02 12:02:24 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1699): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `supplier`', [], false)
+ 3 APPPATH\Models\SupplierModel.php(17): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 4 APPPATH\Controllers\Dashboard.php(30): App\Models\SupplierModel->jumlahSupplier()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
+ERROR - 2024-06-02 12:08:54 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', '', '', 'stok', 3306, '', 0)
+#1 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1699): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\apotekrahmah\app\Models\SupplierModel.php(17): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\apotekrahmah\app\Controllers\Dashboard.php(30): App\Models\SupplierModel->jumlahSupplier()
+#6 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\apotekrahmah\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1699): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#3 C:\xampp\htdocs\apotekrahmah\app\Models\SupplierModel.php(17): CodeIgniter\Database\BaseBuilder->countAllResults()
+#4 C:\xampp\htdocs\apotekrahmah\app\Controllers\Dashboard.php(30): App\Models\SupplierModel->jumlahSupplier()
+#5 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+#6 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\apotekrahmah\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\apotekrahmah\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2024-06-02 12:08:54 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1699): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `supplier`', [], false)
+ 3 APPPATH\Models\SupplierModel.php(17): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 4 APPPATH\Controllers\Dashboard.php(30): App\Models\SupplierModel->jumlahSupplier()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\apotekrahmah\\public\\index.php')
