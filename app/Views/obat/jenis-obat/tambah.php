@@ -42,8 +42,8 @@
                         <div class="card-body">
                             <form action="<?php echo base_url('obat/jenis-obat/tambah'); ?>" method="post">
                                 <div class="form-group">
-                                    <label for="jenis_obat">Jenis Obat</label>
-                                    <input type="text" class="form-control" id="jenis_obat" name="jenis_obat" placeholder="Jenis Obat" style="background-color: #ffffff;">
+                                    <label for="kandungan">Jenis Obat</label>
+                                    <input type="text" class="form-control" id="kandungan" name="kandungan" placeholder="Jenis Obat" style="background-color: #ffffff;">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>

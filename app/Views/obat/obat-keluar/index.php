@@ -45,35 +45,34 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Jenis Obat</th>
-                                        <th>Tanggal Keluar</th>
-                                        <th>Jumlah</th>
-                                        <th>Total Harga</th>
+                                        <th>Nama Obat</th>
+                                        <th>Kandungan Obat</th>
+                                        <th>Satuan</th>
+                                        <th>Jumlah Keluar</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    <?php foreach ($obat_keluar as $ok) : ?>
+                                    <?php foreach ($obat as $om) : ?>
                                         <tr>
                                             <td>
                                                 <?= $i++; ?>
                                             </td>
                                             <td>
-                                                <?= $ok['jenis_obat']; ?> <!-- asumsi nama_obat ada di table obat_keluar -->
+                                                <?= $om['namaobat']; ?>
                                             </td>
                                             <td>
-                                                <?= $ok['tanggal_keluar']; ?>
+                                                <?= $om['kandungan']; ?>
                                             </td>
                                             <td>
-                                                <?= $ok['jumlah']; ?>
+                                                <?= $om['satuan']; ?>
                                             </td>
                                             <td>
-                                                <?= $ok['total_harga']; ?>
+                                                <?= $om['jumlah']; ?>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url('obat/obat-keluar/tampilan/edit/') . $ok['id_obat_keluar']; ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                                <a href="<?= base_url('obat/obat-keluar/hapus/') . $ok['id_obat_keluar']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                                <a href="<?= base_url('/obat/obat-keluar/hapus/') . $om['idriwayat']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -94,4 +93,19 @@
 
 
 </div>
+<script>
+    const hargaInput = document.getElementById('harga');
+    const satuanInput = document.getElementById('jumlah');
+    const totalInput = document.getElementById('total');
+
+    hargaInput.addEventListener('input', updateTotal);
+    satuanInput.addEventListener('input', updateTotal);
+
+    function updateTotal() {
+        const harga = parseInt(hargaInput.value);
+        const satuan = parseInt(satuanInput.value);
+        const total = harga * satuan;
+        totalInput.value = total;
+    }
+</script>
 <?= $this->EndSection() ?>

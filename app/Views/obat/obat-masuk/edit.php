@@ -40,38 +40,38 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <form action="<?php echo base_url('obat/obat-masuk/edit/'. $data['id_obat_masuk']); ?>" method="post">
+                            <form action="<?php echo base_url('obat/obat-masuk/edit/' . $data['idstok']); ?>" method="post">
                                 <div class="form-group">
-                                    <label for="id_obat">Jenis Obat</label>
-                                    <select class="form-control" id="id_obat" name="id_obat">
-                                        <?php foreach ($jenisobat as $jo) { ?>
-                                            <option value="<?= $jo['id_obat'] ?>" <?= ($data['id_obat'] == $jo['id_obat']) ? 'elected' : ''; ?>><?= $jo['jenis_obat'] ?></option>
+                                    <label for="nama_obat">Nama Obat</label>
+                                    <select class="form-control" id="nama_obat" name="nama_obat">
+                                        <?php foreach ($obat as $no) { ?>
+                                            <option value="<?= $no['kode_obat'] ?>" <?= ($data['kode_obat'] == $no['kode_obat']) ? 'selected' : ''; ?>><?= $no['namaobat'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="tanggal_masuk">Tanggal Masuk</label>
-                                    <input type="date" class="form-control" id="tanggal_masuk" name="tanggal_masuk" value="<?= $data['tanggal_masuk'] ?>" placeholder="Tanggal Masuk" style="background-color: #ffffff;">
+                                    <label for="klasifikasi">Klasifikasi</label>
+                                    <input type="text" class="form-control" id="klasifikasi" name="klasifikasi" value="<?= $data['klasifikasi'] ?>" placeholder="Klasifikasi" style="background-color: #ffffff;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="produsen">Produsen</label>
+                                    <input type="text" class="form-control" id="produsen" name="produsen" value="<?= $data['produsen'] ?>" placeholder="Produsen" style="background-color: #ffffff;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="supplier">Supplier</label>
+                                    <input type="text" class="form-control" id="supplier" name="supplier" value="<?= $data['suplier'] ?>" placeholder="Supplier" style="background-color: #ffffff;">
                                 </div>
                                 <div class="form-group">
                                     <label for="jumlah">Jumlah</label>
-                                    <input type="number" class="form-control" id="jumlah" name="jumlah" value="<?= $data['jumlah'] ?>" placeholder="Jumlah" style="background-color: #ffffff;">
+                                    <input type="number" class="form-control" id="jumlah" name="jumlah" value="<?= $data['jumlah'] ?>" placeholder="jumlah" style="background-color: #ffffff;">
                                 </div>
                                 <div class="form-group">
-                                    <label for="status">Status</label>
-                                    <input type="text" class="form-control" id="status" name="status" value="<?= $data['status'] ?>" placeholder="Status" style="background-color: #ffffff;">
+                                    <label for="harga">Harga Beli</label>
+                                    <input type="number" class="form-control" id="harga" name="harga" value="<?= $data['harga'] ?>" placeholder="harga" style="background-color: #ffffff;">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nomina_harga">Nomina Harga</label>
-                                    <input type="number" class="form-control" id="nomina_harga" name="nomina_harga" value="<?= $data['nomina_harga'] ?>" placeholder="Nomina Harga" style="background-color: #ffffff;">
-                                </div>
-                                <div class="form-group">
-                                    <label for="total_harga">Total Harga</label>
-                                    <input type="number" class="form-control" id="total_harga" name="total_harga" value="<?= $data['total_harga'] ?>" placeholder="Total Harga" style="background-color: #ffffff;">
-                                </div>
-                                <div class="form-group">
-                                    <label for="klasifikasi">Klasifikasi</label>
-                                    <input type="text" class="form-control" id="klasifikasi" name="klasifikasi" value="<?= $data['klasifikasi'] ?>" placeholder="Klasifikasi" style="background-color: #ffffff;">
+                                    <label for="total">Total</label>
+                                    <input type="number" class="form-control" id="total" name="total" placeholder="Total" style="background-color: #efefef;" disabled>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <a href="<?= base_url('obat/obat-masuk/tampilan') ?>" class="btn btn-secondary">Kembali</a>
@@ -91,4 +91,20 @@
 
 
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', updateTotal)
+    const hargaInput = document.getElementById('harga');
+    const satuanInput = document.getElementById('jumlah');
+    const totalInput = document.getElementById('total');
+
+    hargaInput.addEventListener('input', updateTotal);
+    satuanInput.addEventListener('input', updateTotal);
+
+    function updateTotal() {
+        const harga = parseInt(hargaInput.value);
+        const satuan = parseInt(satuanInput.value);
+        const total = harga * satuan;
+        totalInput.value = total;
+    }
+</script>
 <?= $this->EndSection() ?>

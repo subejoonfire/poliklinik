@@ -3,23 +3,23 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\ModelJenisObat;
+use App\Models\KandunganModel;
 
 class JenisObatController extends BaseController
 {
 
-    public $ModelJenisObat;
+    public $KandunganModel;
     public function __construct()
     {
-        $this->ModelJenisObat = new ModelJenisObat();
+        $this->KandunganModel = new KandunganModel();
     }
     public function tambah()
     {
-        if ($this->request->getPost('jenis_obat')) {
+        if ($this->request->getPost('kandungan')) {
             $data = [
-                'jenis_obat' => $this->request->getPost('jenis_obat')
+                'kandungan' => $this->request->getPost('kandungan')
             ];
-            $this->ModelJenisObat->insert($data);
+            $this->KandunganModel->insert($data);
             return redirect()->to('obat/jenis-obat/tampilan');
         } else {
             return view('obat/jenis-obat/tampilan/tambah');
@@ -28,12 +28,12 @@ class JenisObatController extends BaseController
 
     public function edit($id_obat)
     {
-        $data['jenis_obat'] = $this->ModelJenisObat->find($id_obat);
-        if ($this->request->getPost('jenis_obat')) {
+        $data['kandungan'] = $this->KandunganModel->find($id_obat);
+        if ($this->request->getPost('kandungan')) {
             $data = [
-                'jenis_obat' => $this->request->getPost('jenis_obat')
+                'kandungan' => $this->request->getPost('kandungan')
             ];
-            $this->ModelJenisObat->update($id_obat, $data);
+            $this->KandunganModel->update($id_obat, $data);
             return redirect()->to('obat/jenis-obat/tampilan');
         } else {
             return view('obat/jenis-obat/tampilan/edit', $data);
@@ -42,7 +42,7 @@ class JenisObatController extends BaseController
 
     public function hapus($id_obat)
     {
-        $this->ModelJenisObat->delete($id_obat);
+        $this->KandunganModel->delete($id_obat);
         return redirect()->to('obat/jenis-obat/tampilan');
     }
 }

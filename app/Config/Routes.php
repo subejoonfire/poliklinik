@@ -44,11 +44,11 @@ $routes->group('obat', function ($routes) {
         $routes->group('tampilan', function ($routes) {
             $routes->get('/', 'ObatMasukViewController::index');
             $routes->get('tambah', 'ObatMasukViewController::tambah');
-            $routes->get('edit/(:num)', 'ObatMasukViewController::edit/$1');
+            $routes->get('edit/(:any)', 'ObatMasukViewController::edit/$1');
         });
         $routes->post('tambah', 'ObatMasukController::tambah');
-        $routes->get('hapus/(:num)', 'ObatMasukController::hapus/$1');
-        $routes->post('edit/(:num)', 'ObatMasukController::edit/$1');
+        $routes->get('hapus/(:any)', 'ObatMasukController::hapus/$1');
+        $routes->post('edit/(:any)', 'ObatMasukController::edit/$1');
     });
 });
 // routes kelola supplier

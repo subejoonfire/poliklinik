@@ -49,13 +49,17 @@
                                     <label for="idkandungan">Jenis Obat</label>
                                     <select class="form-control" id="idkandungan" name="idkandungan">
                                         <?php foreach ($kandungan as $jenis) : ?>
-                                            <option value="<?= $jenis['idkandungan'] ?>" <?= ($obat['idkandungan'] == $jenis['idkandungan']) ? 'elected' : ''; ?>><?= $jenis['kandungan'] ?></option>
+                                            <option value="<?= $jenis['idkandungan'] ?>" <?= ($obat['idkandungan'] == $jenis['idkandungan']) ? 'selected' : ''; ?>><?= $jenis['kandungan'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="namaobat">Nama Obat</label>
                                     <input type="text" class="form-control" id="namaobat" name="namaobat" value="<?= $obat['namaobat'] ?>" placeholder="Nama Obat" style="background-color: #ffffff;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="satuan">Satuan</label>
+                                    <input type="text" class="form-control" id="satuan" name="satuan" value="<?= $obat['satuan'] ?>" placeholder="Satuan" style="background-color: #ffffff;">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Update</button>
                                 <a href="<?= base_url('obat/kelola-obat/tampilan') ?>" class="btn btn-secondary">Kembali</a>

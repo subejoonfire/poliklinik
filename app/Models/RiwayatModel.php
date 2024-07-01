@@ -14,10 +14,15 @@ class RiwayatModel extends Model
     protected $protectFields    = true;
     protected $allowedFields = [
         'idstok',
-        'kodeobat',
+        'kode_obat',
         'tanggal',
         'keterangan',
-        'jumlah'
+        'suplier',
+        'produsen',
+        'harga',
+        'total',
+        'klasifikasi',
+        'jumlah',
     ];
 
     // Dates

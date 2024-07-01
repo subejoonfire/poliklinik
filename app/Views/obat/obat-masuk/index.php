@@ -48,10 +48,12 @@
                                         <th>Nama Obat</th>
                                         <th>Kandungan Obat</th>
                                         <th>Satuan</th>
-                                        <th>Stok</th>
                                         <th>Klasifikasi</th>
                                         <th>Produsen</th>
                                         <th>Supplier</th>
+                                        <th>Harga</th>
+                                        <th>Jumlah Masuk</th>
+                                        <th>Total</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -72,20 +74,25 @@
                                                 <?= $om['satuan']; ?>
                                             </td>
                                             <td>
-                                                <?= $om['stok']; ?>
-                                            </td>
-                                            <td>
                                                 <?= $om['klasifikasi']; ?>
                                             </td>
                                             <td>
                                                 <?= $om['produsen']; ?>
                                             </td>
                                             <td>
-                                                <?= $om['supplier']; ?>
+                                                <?= $om['suplier']; ?>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url('/obat/obat-masuk/tampilan/edit/') . $om['kode_obat']; ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                                <a href="<?= base_url('/obat/obat-masuk/hapus/') . $om['kode_obat']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                                <?= $om['harga']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $om['jumlah']; ?>
+                                            </td>
+                                            <td>
+                                                Rp<?= $om['total']; ?>
+                                            </td>
+                                            <td>
+                                                <a href="<?= base_url('/obat/obat-masuk/hapus/') . $om['idriwayat']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

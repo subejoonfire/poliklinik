@@ -57,6 +57,10 @@
                                     <label for="nama_obat">Nama Obat</label>
                                     <input type="text" class="form-control" id="nama_obat" name="namaobat" placeholder="Nama Obat" style="background-color: #ffffff;">
                                 </div>
+                                <div class="form-group">
+                                    <label for="satuan">Satuan Obat</label>
+                                    <input type="text" class="form-control" id="satuan" name="satuan" placeholder="Satuan Obat" style="background-color: #ffffff;">
+                                </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <a href="<?= base_url('obat/kelola-obat/tampilan') ?>" class="btn btn-secondary">Kembali</a>
                             </form>

@@ -22,6 +22,7 @@ class KelolaObatController extends BaseController
             $data = [
                 'kode_obat' => $this->request->getPost('kode_obat'),
                 'namaobat' => $this->request->getPost('namaobat'),
+                'satuan' => $this->request->getPost('satuan'),
                 'idkandungan' => $this->request->getPost('idkandungan'),
             ];
             $this->ObatModel->insert($data);
@@ -40,6 +41,7 @@ class KelolaObatController extends BaseController
             $data = [
                 'kode_obat' => $this->request->getPost('kode_obat'),
                 'namaobat' => $this->request->getPost('namaobat'),
+                'satuan' => $this->request->getPost('satuan'),
                 'idkandungan' => $this->request->getPost('idkandungan')
             ];
             $this->ObatModel->update($id_obat, $data);

@@ -47,18 +47,25 @@
                                         <th>No</th>
                                         <th>Kode Obat</th>
                                         <th>Nama Obat</th>
+                                        <th>Satuan Obat</th>
                                         <th>Kandungan Obat</th>
+                                        <th>Stok Obat</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    <?php foreach ($obat as $o) : ?>
+                                    <?php foreach ($obat as $o) :
+                                        $stok = new \App\Models\StokModel();
+                                        $data1 = $stok->where('kode_obat', $o['kode_obat'])->first();
+                                    ?>
                                         <tr>
                                             <td><?= $i++; ?></td>
                                             <td><?= $o['kode_obat']; ?></td>
                                             <td><?= $o['namaobat']; ?></td>
+                                            <td><?= $o['satuan']; ?></td>
                                             <td><?= $o['kandungan']; ?></td>
+                                            <td><?= $data1['stok'] ?? '0'; ?></td>
                                             <td>
                                                 <a href="<?= base_url('obat/kelola-obat/tampilan/edit/' . $o['kode_obat']); ?>" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
                                                 <a href="<?= base_url('obat/kelola-obat/hapus/' . $o['kode_obat']); ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>

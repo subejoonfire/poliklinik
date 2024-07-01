@@ -2,29 +2,35 @@
 
 namespace App\Controllers;
 
-use App\Models\JenisObatModel;
-use App\Models\ModelObatKeluar;
+use App\Models\ObatModel;
+use App\Models\StokModel;
+use App\Models\RiwayatModel;
+use App\Models\ModelKeuangan;
+use App\Models\KandunganModel;
 use App\Controllers\BaseController;
 
 class ObatKeluarViewController extends BaseController
 {
-    
-    public $ModelObatKeluar;
-    public $ModelJenisObat;
-
+    public $ModelKeuangan;
+    public $StokModel;
+    public $KandunganModel;
+    public $ObatModel;
+    public $RiwayatModel;
     public function __construct()
     {
-        $this->ModelObatKeluar = new ModelObatKeluar();
-        $this->ModelJenisObat = new JenisObatModel();
+        $this->StokModel = new StokModel();
+        $this->KandunganModel = new KandunganModel();
+        $this->ModelKeuangan = new ModelKeuangan();
+        $this->RiwayatModel = new RiwayatModel();
+        $this->ObatModel = new ObatModel();
     }
-
     public function index()
     {
-        $obat_keluar = $this->ModelObatKeluar->join('jenis_obat', 'obat_keluar.id_obat = jenis_obat.id_obat')
-            ->findAll();
+        $obat_keluar = $this->RiwayatModel->join('obat', 'riwayat.kode_obat = obat.kode_obat')->join('kandungan', 'obat.idkandungan = kandungan.idkandungan')
+            ->join('stok', 'riwayat.idstok = stok.idstok')->where('keterangan = "Keluar"')->findAll();
         $data = [
             'title' => 'Data Obat Keluar',
-            'obat_keluar' => $obat_keluar,
+            'obat' => $obat_keluar,
         ];
         return view('obat/obat-keluar/index', $data);
     }
@@ -32,8 +38,8 @@ class ObatKeluarViewController extends BaseController
     public function tambah()
     {
         $data = [
-            'title' => 'Tambah Pengeluaran',
-            'jenisobat' => $this->ModelJenisObat->findAll(),
+            'title' => 'Tambah Pemasukan',
+            'namaobat' => $this->ObatModel->findAll(),
         ];
         return view('obat/obat-keluar/tambah', $data);
     }
@@ -42,8 +48,8 @@ class ObatKeluarViewController extends BaseController
     {
         $data = [
             'title' => 'Edit Pengeluaran',
-            'data' => $this->ModelObatKeluar->find($id),
-            'jenisobat' => $this->ModelJenisObat->findAll(),
+            'data' => $this->ObatModel->find($id),
+            'jenisobat' => $this->KandunganModel->findAll(),
         ];
         return view('obat/obat-keluar/edit', $data);
     }

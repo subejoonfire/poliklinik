@@ -49,13 +49,16 @@
                                     <label for="nama_obat">Nama Obat</label>
                                     <select class="form-control" id="nama_obat" name="nama_obat">
                                         <?php foreach ($namaobat as $no) { ?>
-                                            <option value="<?= $no['id_obat'] ?>"><?= $no['nama_obat'] ?></option>
+                                            <option value="<?= $no['kode_obat'] ?>"><?= $no['namaobat'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="klasifikasi">Klasifikasi</label>
-                                    <input type="text" class="form-control" id="klasifikasi" name="klasifikasi" placeholder="Klasifikasi" style="background-color: #ffffff;">
+                                    <select class="form-control" id="klasifikasi" name="klasifikasi">
+                                        <option value="Dalam Negeri">Dalam Negeri</option>
+                                        <option value="Luar Negeri">Luar Negeri</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="produsen">Produsen</label>
@@ -72,10 +75,6 @@
                                 <div class="form-group">
                                     <label for="harga">Harga</label>
                                     <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga" style="background-color: #ffffff;">
-                                </div>
-                                <div class="form-group">
-                                    <label for="satuan">Satuan</label>
-                                    <input type="text" class="form-control" id="satuan" name="satuan" placeholder="Satuan" style="background-color: #ffffff;">
                                 </div>
                                 <div class="form-group">
                                     <label for="total">Total</label>
@@ -101,7 +100,7 @@
 </div>
 <script>
     const hargaInput = document.getElementById('harga');
-    const satuanInput = document.getElementById('satuan');
+    const satuanInput = document.getElementById('jumlah');
     const totalInput = document.getElementById('total');
 
     hargaInput.addEventListener('input', updateTotal);

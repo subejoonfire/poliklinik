@@ -43,13 +43,13 @@
                             <form action="<?php echo base_url('obat/obat-keluar/tambah'); ?>" method="post">
                                 <div class="form-group">
                                     <label for="tanggal_keluar">Tanggal Keluar</label>
-                                    <input type="date" class="form-control" id="tanggal_keluar" name="tanggal_keluar" value="<?php echo date('Y-m-d'); ?>" placeholder="Tanggal Keluar" style="background-color: #efefef;" disabled>
+                                    <input type="date" class="form-control" id="tanggal_keluar" name="tanggal_keluar" value="<?php echo date('Y-m-d'); ?>" style="background-color: #efefef;" disabled>
                                 </div>
                                 <div class="form-group">
-                                    <label for="id_obat">Jenis Obat</label>
-                                    <select class="form-control" id="id_obat" name="id_obat">
-                                        <?php foreach ($jenisobat as $jo) { ?>
-                                            <option value="<?= $jo['id_obat'] ?>"><?= $jo['jenis_obat'] ?></option>
+                                    <label for="nama_obat">Nama Obat</label>
+                                    <select class="form-control" id="nama_obat" name="nama_obat">
+                                        <?php foreach ($namaobat as $no) { ?>
+                                            <option value="<?= $no['kode_obat'] ?>"><?= $no['namaobat'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -58,7 +58,7 @@
                                     <input type="number" class="form-control" id="jumlah" name="jumlah" placeholder="Jumlah" style="background-color: #ffffff;">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
-                                <a href="<?= base_url('obat/obat-keluar/tampilan') ?>" class="btn btn-secondary">Kembali</a>
+                                <a href="<?= base_url('obat/obat-masuk/tampilan') ?>" class="btn btn-secondary">Kembali</a>
                             </form>
                         </div>
                         <!-- /.card-body -->

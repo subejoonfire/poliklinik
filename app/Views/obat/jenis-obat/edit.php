@@ -40,10 +40,10 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <form action="<?php echo base_url('obat/jenis-obat/edit/' . $data['id_obat']); ?>" method="post">
+                            <form action="<?php echo base_url('obat/jenis-obat/edit/' . $data['idkandungan']); ?>" method="post">
                                 <div class="form-group">
-                                    <label for="jenis_obat">Jenis Obat</label>
-                                    <input type="text" class="form-control" id="jenis_obat" name="jenis_obat" value="<?= $data['jenis_obat'] ?>" placeholder="Jenis Obat" style="background-color: #ffffff;">
+                                    <label for="kandungan">Jenis Obat</label>
+                                    <input type="text" class="form-control" id="kandungan" name="kandungan" value="<?= $data['kandungan'] ?>" placeholder="Jenis Obat" style="background-color: #ffffff;">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>

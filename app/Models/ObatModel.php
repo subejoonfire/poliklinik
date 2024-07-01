@@ -15,6 +15,7 @@ class ObatModel extends Model
     protected $allowedFields    = [
         'kode_obat',
         'idkandungan',
+        'satuan',
         'namaobat',
     ];
 
