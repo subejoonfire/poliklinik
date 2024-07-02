@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2024 at 02:08 PM
+-- Generation Time: Jul 02, 2024 at 02:51 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -38,7 +38,7 @@ CREATE TABLE `kandungan` (
 
 INSERT INTO `kandungan` (`idkandungan`, `kandungan`) VALUES
 (1, 'Dosa'),
-(3, 'Pahala');
+(3, 'Pahalaaa');
 
 -- --------------------------------------------------------
 
@@ -72,15 +72,18 @@ INSERT INTO `keuangan` (`id_keuangan`, `hari_mulai`, `jam_mulai`, `hari_berakhir
 CREATE TABLE `obat` (
   `kode_obat` varchar(100) NOT NULL,
   `idkandungan` int(11) NOT NULL,
-  `namaobat` varchar(255) NOT NULL
+  `namaobat` varchar(255) NOT NULL,
+  `satuan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `obat`
 --
 
-INSERT INTO `obat` (`kode_obat`, `idkandungan`, `namaobat`) VALUES
-('KJK090', 1, 'Zinettt');
+INSERT INTO `obat` (`kode_obat`, `idkandungan`, `namaobat`, `satuan`) VALUES
+('22KKII', 3, 'Bodrex', 'Keping'),
+('92_kkKJDS', 3, 'Panadol', 'Tablet'),
+('KJK090', 1, 'Zinettt', 'Keping');
 
 -- --------------------------------------------------------
 
@@ -134,11 +137,33 @@ INSERT INTO `pengeluaran` (`id_pengeluaran`, `id_keuangan`, `tgl_pengeluaran`, `
 CREATE TABLE `riwayat` (
   `idriwayat` int(11) NOT NULL,
   `idstok` int(11) DEFAULT NULL,
-  `kodeobat` varchar(255) DEFAULT NULL,
+  `kode_obat` varchar(255) DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL,
-  `jumlah` int(11) DEFAULT NULL
+  `jumlah` int(11) DEFAULT NULL,
+  `suplier` varchar(50) DEFAULT NULL,
+  `produsen` varchar(50) DEFAULT NULL,
+  `klasifikasi` varchar(100) DEFAULT NULL,
+  `harga` int(11) DEFAULT NULL,
+  `total` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `riwayat`
+--
+
+INSERT INTO `riwayat` (`idriwayat`, `idstok`, `kode_obat`, `tanggal`, `keterangan`, `jumlah`, `suplier`, `produsen`, `klasifikasi`, `harga`, `total`) VALUES
+(6, 6, 'KJK090', '2024-07-01', 'Masuk', 20, 'Hamim', 'Haji Isam', 'Obat', 10000, 200000),
+(7, 6, 'KJK090', '2024-07-01', 'Keluar', 20, 'Hamim', 'Haji ', 'Obat', 20039, 400780),
+(8, 6, 'KJK090', '2024-07-01', 'Masuk', 100, 'safd', 'asdf', 'asdf', 321, 32100),
+(9, 6, 'KJK090', '2024-07-01', 'Keluar', 12, NULL, NULL, NULL, NULL, NULL),
+(10, 6, 'KJK090', '2024-07-01', 'Keluar', 11, NULL, NULL, NULL, NULL, NULL),
+(11, 6, 'KJK090', '2024-07-01', 'Keluar', 15, NULL, NULL, NULL, NULL, NULL),
+(12, 6, 'KJK090', '2024-07-01', 'Masuk', 10, 'sdaf', 'asfd', 'adsf', 10000, 100000),
+(14, 7, '22KKII', '2024-07-01', 'Masuk', 10, 'Hamim', 'Osyad', 'Dalam Negeri', 10000, 100000),
+(15, 7, '22KKII', '2024-07-01', 'Masuk', 10, 'Hamim', 'Osyad', 'Dalam Negeri', 10000, 100000),
+(18, 10, '92_kkKJDS', '2024-07-01', 'Masuk', 50, 'Angin', 'Kipas', 'Dalam Negeri', 10000, 500000),
+(19, 10, '92_kkKJDS', '2024-07-01', 'Keluar', 40, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -169,13 +194,18 @@ INSERT INTO `saldo` (`id_saldo`, `id_keuangan`, `tgl_saldo`, `jum_saldo`) VALUES
 CREATE TABLE `stok` (
   `idstok` int(11) NOT NULL,
   `kode_obat` varchar(255) DEFAULT NULL,
-  `satuan` varchar(255) DEFAULT NULL,
-  `stok` int(11) DEFAULT NULL,
-  `klasifikasi` varchar(255) DEFAULT NULL,
-  `produsen` varchar(255) DEFAULT NULL,
-  `suplier` varchar(255) DEFAULT NULL,
-  `hargabeli` int(11) DEFAULT NULL
+  `stok` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `stok`
+--
+
+INSERT INTO `stok` (`idstok`, `kode_obat`, `stok`) VALUES
+(6, 'KJK090', 80),
+(7, '22KKII', 20),
+(9, 'PNDSAF9', 100),
+(10, '92_kkKJDS', 10);
 
 -- --------------------------------------------------------
 
@@ -254,7 +284,8 @@ ALTER TABLE `pengeluaran`
 --
 ALTER TABLE `riwayat`
   ADD PRIMARY KEY (`idriwayat`),
-  ADD KEY `idstok` (`idstok`);
+  ADD KEY `idstok` (`idstok`),
+  ADD KEY `kode_obat` (`kode_obat`);
 
 --
 -- Indexes for table `saldo`
@@ -283,7 +314,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `kandungan`
 --
 ALTER TABLE `kandungan`
-  MODIFY `idkandungan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idkandungan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `keuangan`
@@ -307,7 +338,7 @@ ALTER TABLE `pengeluaran`
 -- AUTO_INCREMENT for table `riwayat`
 --
 ALTER TABLE `riwayat`
-  MODIFY `idriwayat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idriwayat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `saldo`
@@ -319,7 +350,7 @@ ALTER TABLE `saldo`
 -- AUTO_INCREMENT for table `stok`
 --
 ALTER TABLE `stok`
-  MODIFY `idstok` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idstok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
@@ -341,7 +372,8 @@ ALTER TABLE `pemasukan`
 -- Constraints for table `riwayat`
 --
 ALTER TABLE `riwayat`
-  ADD CONSTRAINT `riwayat_ibfk_1` FOREIGN KEY (`idstok`) REFERENCES `stok` (`idstok`);
+  ADD CONSTRAINT `riwayat_ibfk_1` FOREIGN KEY (`idstok`) REFERENCES `stok` (`idstok`),
+  ADD CONSTRAINT `riwayat_ibfk_2` FOREIGN KEY (`kode_obat`) REFERENCES `obat` (`kode_obat`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
