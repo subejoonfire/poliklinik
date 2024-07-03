@@ -49,6 +49,7 @@
                                         <th>Kandungan Obat</th>
                                         <th>Satuan</th>
                                         <th>Jumlah Keluar</th>
+                                        <th>Tanggal</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -70,6 +71,9 @@
                                             </td>
                                             <td>
                                                 <?= $om['jumlah']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $om['tanggal']; ?>
                                             </td>
                                             <td>
                                                 <a href="<?= base_url('/obat/obat-keluar/hapus/') . $om['idriwayat']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>

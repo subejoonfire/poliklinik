@@ -54,6 +54,7 @@
                                         <th>Harga</th>
                                         <th>Jumlah Masuk</th>
                                         <th>Total</th>
+                                        <th>Tanggal</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -90,6 +91,9 @@
                                             </td>
                                             <td>
                                                 Rp<?= $om['total']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $om['tanggal']; ?>
                                             </td>
                                             <td>
                                                 <a href="<?= base_url('/obat/obat-masuk/hapus/') . $om['idriwayat']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>

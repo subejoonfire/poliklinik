@@ -50,6 +50,7 @@
                                         <th>Satuan Obat</th>
                                         <th>Kandungan Obat</th>
                                         <th>Stok Obat</th>
+                                        <th>Tanggal</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -64,6 +65,7 @@
                                             <td><?= $o['kode_obat']; ?></td>
                                             <td><?= $o['namaobat']; ?></td>
                                             <td><?= $o['satuan']; ?></td>
+                                            <td><?= $o['kandungan']; ?></td>
                                             <td><?= $o['kandungan']; ?></td>
                                             <td><?= $data1['stok'] ?? '0'; ?></td>
                                             <td>
