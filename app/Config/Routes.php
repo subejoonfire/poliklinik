@@ -5,7 +5,9 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Dashboard::index');
+$routes->get('/', 'Dashboard::login');
+$routes->post('/loginAction', 'Dashboard::loginAction');
+$routes->get('dashboard', 'Dashboard::index');
 $routes->group('obat', function ($routes) {
     $routes->group('jenis-obat', function ($routes) {
         $routes->group('tampilan', function ($routes) {
